@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ANMould</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+ 	<string name="app_version">0.1</string>
+    <string name="toast_exit_message">Press twice to exit</string>
+    
+    <string name="main_title">开发模具</string>
+</resources>

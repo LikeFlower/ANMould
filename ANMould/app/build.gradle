@@ -1,0 +1,113 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "win.waylib.anmould"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    signingConfigs {
+//        debug {
+//            storeFile file("tronsis_debug.jks")
+//            storePassword "tronsisandroid123"
+//            keyAlias "Tronsis_debug"
+//            keyPassword "tronsisandroid123"
+//        }
+//
+//        release {
+//            storeFile file("anmould_release.jks")
+//            storePassword "anmouldandroid123"
+//            keyAlias "ANMould"
+//            keyPassword "anmouldandroid123"
+//        }
+//
+//    }
+
+    buildTypes {
+
+//        debug {
+//            versionNameSuffix "-debug"
+//            // 显示Log
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            zipAlignEnabled false
+//            signingConfig signingConfigs.debug
+//        }
+
+//        release {
+//            versionNameSuffix "-release"
+//            // 显示Log
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+//            // 混淆
+//            minifyEnabled true
+//            // 加载混淆配置文件
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//
+//            //Zipalgn优化
+//            zipAlignEnabled true
+//
+//            // 移除无用的resource文件
+//            shrinkResources true
+//
+//            // 签名
+//            signingConfig signingConfigs.release
+//        }
+
+    }
+
+//    //渠道Flavors
+//    productFlavors {
+//        GooglePlay {}
+//        360 {}
+//        91 {}
+//        YingYongBao {}
+//    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_7
+//        targetCompatibility JavaVersion.VERSION_1_7
+//    }
+//
+//
+//
+//    applicationVariants.all { variant ->
+//        variant.outputs.each { output ->
+//            def outputFile = output.outputFile
+//            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                def fileName = "deplay-debug-${defaultConfig.versionName}.apk"
+//                output.outputFile = new File(outputFile.parent, fileName)
+//            }
+//        }
+//    }
+
+    dexOptions {
+        javaMaxHeapSize "5g"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile files('libs/core-3.2.1.jar')
+}
